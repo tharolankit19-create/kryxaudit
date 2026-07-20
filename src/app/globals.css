@@ -1,0 +1,81 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #fafaf9;
+  --ink: #0a0a0a;
+  --flame: #f97316;
+}
+
+html,
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Bracket-corner card: four L-shaped corners, no full border. */
+.bracket {
+  position: relative;
+  background: #ffffff;
+}
+.bracket::before,
+.bracket::after,
+.bracket > .bracket-b::before,
+.bracket > .bracket-b::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--ink);
+  border-style: solid;
+  border-width: 0;
+}
+.bracket::before {
+  top: -1px;
+  left: -1px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+.bracket::after {
+  top: -1px;
+  right: -1px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.bracket > .bracket-b::before {
+  bottom: -1px;
+  left: -1px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+.bracket > .bracket-b::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+.bracket-flame::before,
+.bracket-flame::after,
+.bracket-flame > .bracket-b::before,
+.bracket-flame > .bracket-b::after {
+  border-color: var(--flame);
+}
+
+.underline-flame {
+  text-decoration: underline;
+  text-decoration-color: var(--flame);
+  text-decoration-thickness: 5px;
+  text-underline-offset: 6px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
