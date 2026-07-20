@@ -2,6 +2,16 @@ import Nav from "@/components/Nav";
 import ScanForm from "@/components/ScanForm";
 import ScanningAnimation from "@/components/ScanningAnimation";
 import SocialProof from "@/components/SocialProof";
+import Problem from "@/components/sections/Problem";
+import HowItWorks from "@/components/sections/HowItWorks";
+import DemoPreview from "@/components/sections/DemoPreview";
+import Outcomes from "@/components/sections/Outcomes";
+import Comparison from "@/components/sections/Comparison";
+import Pricing from "@/components/sections/Pricing";
+import Roadmap from "@/components/sections/Roadmap";
+import Founder from "@/components/sections/Founder";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +31,7 @@ export default function Home() {
 
         <p className="mx-auto mt-6 max-w-xl text-lg text-ink/70">
           Describe your startup idea. IdeaGap scans Product Hunt and the live web, flags the
-          dead competitors, and names the one gap none of them solve.
+          dead competitors, and names the one gap none of them solve — in 30 seconds.
         </p>
 
         <div className="mt-10">
@@ -36,11 +46,17 @@ export default function Home() {
         </div>
       </section>
 
+      <Problem />
+      <HowItWorks />
+      <DemoPreview />
+      <Outcomes />
+      <Comparison />
+      <Pricing />
+      <Roadmap />
+      <Founder />
       <SocialProof />
-
-      <footer className="mx-auto w-full max-w-5xl px-4 pb-12 pt-4 text-center text-xs text-ink/40">
-        IdeaGap · Free scan, then unlock the full gap for $4.99. No signup.
-      </footer>
+      <FinalCTA />
+      <Footer />
     </main>
   );
 }

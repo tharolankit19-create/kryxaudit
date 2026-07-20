@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+const LINKS = [
+  { href: "#how", label: "How it works" },
+  { href: "#compare", label: "Compare" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#contact", label: "Contact" },
+];
+
 export default function Nav() {
   return (
     <div className="sticky top-4 z-50 mx-auto w-full max-w-5xl px-4">
@@ -12,6 +19,15 @@ export default function Nav() {
           </span>
           <span className="font-display text-lg font-black tracking-tight">IdeaGap</span>
         </Link>
+
+        <div className="hidden items-center gap-6 md:flex">
+          {LINKS.map((l) => (
+            <a key={l.href} href={l.href} className="text-sm font-medium text-ink/70 transition hover:text-ink">
+              {l.label}
+            </a>
+          ))}
+        </div>
+
         <a
           href="#scan"
           className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
